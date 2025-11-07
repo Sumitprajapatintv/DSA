@@ -190,30 +190,72 @@
 // printstarts4(5);
 
 
-function printstarts4(n) {
-    for (let i = 1; i <= n; i++) {
-        let str = "";
-        let char = 65;
-        for (let j = 1; j <= (n - i); j++) {
-            str += " "
-        }
-        for (let j = 1; j <= (2 * i - 1); j++) {
-            if (j < (((2 * i - 1) / 2)+1)) {
-                str += String.fromCharCode(char++);
-            }
-            else {
-                str += String.fromCharCode(char--);
-            }
+// function printstarts4(n) {
+//     for (let i = 1; i <= n; i++) {
+//         let str = "";
+//         let char = 65;
+//         for (let j = 1; j <= (n - i); j++) {
+//             str += " "
+//         }
+//         for (let j = 1; j <= (2 * i - 1); j++) {
+//             if (j < (((2 * i - 1) / 2)+1)) {
+//                 str += String.fromCharCode(char++);
+//             }
+//             else {
+//                 str += String.fromCharCode(char--);
+//             }
 
-        }
-        for (let j = 1; j <= (n - i); j++) {
-            str += " "
+//         }
+//         for (let j = 1; j <= (n - i); j++) {
+//             str += " "
+//         }
+//         console.log(str)
+
+//     }
+// }
+// printstarts4(6);
+
+// function printstarts4(n) {
+//     for (let i = 1; i <= n; i++) {
+//         let str = "";
+//         let char = 65;
+//         for (let j = 1; j <= (n - i); j++) {
+//             str += " "
+//         }
+//         for (let j = 1; j <= (2 * i - 1); j++) {
+//             if (j < (((2 * i - 1) / 2)+1)) {
+//                 str += String.fromCharCode(char++);
+//             }
+//             else {
+//                 str += String.fromCharCode(char--);
+//             }
+
+//         }
+//         for (let j = 1; j <= (n - i); j++) {
+//             str += " "
+//         }
+//         console.log(str)
+
+//     }
+// }
+// printstarts4(6);
+
+
+function printstarts4(n) {
+     let start=64+n;
+    for (let i = 1; i <= n; i++) {
+        let b=start;
+        let str = "";
+        for (let j = 1; j <= i; j++) {
+            str += String.fromCharCode(b++);
+
         }
         console.log(str)
-
+        start--;
     }
 }
-printstarts4(6);
+printstarts4(5);
+
 
 
 // 1 - [3, 1, 3]
