@@ -49,7 +49,7 @@ function longestSubarrayK(arr, k) {
   }
 
   return maxLen;
-}
+} 
 
 console.log(longestSubarrayK([1,2,3,1,1,1,2,3], 6)); // 4
 
