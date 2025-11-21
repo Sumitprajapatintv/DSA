@@ -28,47 +28,44 @@
 // Explanation: 
 // rotate 1 steps to the right: [99,-1,-100,3]
 // rotate 2 steps to the right: [3,99,-1,-100]
- 
+
 
 // Constraints:
 
 // 1 <= nums.length <= 105
 // -231 <= nums[i] <= 231 - 1
 // 0 <= k <= 105
- 
+
 
 // Follow up:
 
 // Try to come up with as many solutions as you can. There are at least three different ways to solve this problem.
 // Could you do it in-place with O(1) extra space?
- 
+
 // Discover more
 // Math
 // Mathematics
 
-function rotateArray(nums,k)
-{
-    k=k%nums.length;
-    
-            reverse(nums,0,nums.length-k-1)
-     reverse(nums,nums.length-k,nums.length-1)
-     reverse(nums,0,nums.length-1)
-     return nums
-    
+function rotateArray(nums, k) {
+    k = k % nums.length;
+
+    reverse(nums, 0, nums.length - k - 1)
+    reverse(nums, nums.length - k, nums.length - 1)
+    reverse(nums, 0, nums.length - 1)
+    return nums
+
 
     return nums
 }
 
-function reverse(nums,i,j)
-{
-    while(i<=j)
-    {
+function reverse(nums, i, j) {
+    while (i <= j) {
 
-        let temp=nums[i];
-        nums[i]=nums[j]
-        nums[j]=temp
+        let temp = nums[i];
+        nums[i] = nums[j]
+        nums[j] = temp
         i++;
         j--;
     }
 }
-console.log(rotateArray([1,2,3],7))
+console.log(rotateArray([1, 2, 3], 7))

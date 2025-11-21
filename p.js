@@ -1,5 +1,9 @@
-var myChars = ["a", "b", "c", "d"];
-delete myChars[0];
-console.log(myChars);
-console.log(myChars[0]);
-console.log(myChars.length);
+var array1 = new Array(3);
+console.log(array1);
+
+var array2 = [];
+array2[2] = 100;
+console.log(array2);
+
+var array3 = [, , ,];
+console.log(array3);
