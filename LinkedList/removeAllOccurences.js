@@ -57,28 +57,52 @@ function insertBeforeKthPostion(head, value, k) {
     return head
 }
 
-function removeAllOccurences(head_ref,value)
-{
-    let curr=head_ref
-    while(curr)
-    {
-        if(curr.data==value)
-        {
-            let nextNode=curr.next
-            let prevNode=curr.prev
-            if(!prevNode)
-            {
-                head_ref=nextNode
-                if(head_ref)head_ref.prev=null
+function removeAllOccurences(head_ref, value) {
+    let curr = head_ref
+    while (curr) {
+        if (curr.data == value) {
+            let nextNode = curr.next
+            let prevNode = curr.prev
+            if (!prevNode) {
+                head_ref = nextNode
+                if (head_ref) head_ref.prev = null
             }
-            else{
-                prevNode.next=nextNode
-                if(nextNode)nextNode.prev=prevNode
+            else {
+                prevNode.next = nextNode
+                if (nextNode) nextNode.prev = prevNode
             }
         }
-        curr=curr.next        
+        curr = curr.next
     }
     return head_ref;
+}
+
+function findPairWithGivenSum(head, k) {
+    let ans = []
+    let temp = head;
+    let tail = temp
+    while (tail.next != null) {
+        tail = tail.next
+    }
+    let left = head
+    let right = tail
+    while (left !== right && right.next!=left) {
+        let sum = left.data + right.data
+        if (sum == k) {
+            if (!ans.includes([right.data, left.data])) {
+                ans.push([left.data, right.data])
+                left = left.next
+                right = right.prev
+            }
+        }
+        else if (sum < k) {
+            left = left.next
+        }
+        else {
+            right = right.prev
+        }
+    }
+    return ans
 }
 
 function printList(h) {
@@ -89,6 +113,7 @@ function printList(h) {
     }
 }
 
-let h = convertArray2DoblyList([2,5,2,4,8,10,2,2])
-h=removeAllOccurences(h,2)
+let h = convertArray2DoblyList([1, 2, 3, 4])
+let result = findPairWithGivenSum(h, 5)
+console.log("result", result)
 printList(h)
