@@ -42,7 +42,7 @@ var addOneToList = function (head) {
         carry = Math.floor(addition / 10)
         console.log("Carray", carry)
         if (!temp.next && carry) {
-            temp.next = new Node(carry)
+            temp.next = new Node(carry) 
             carry = 0
         }
         temp = temp.next

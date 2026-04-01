@@ -86,7 +86,7 @@ function findPairWithGivenSum(head, k) {
     }
     let left = head
     let right = tail
-    while (left !== right && right.next!=left) {
+    while (left !== right && right.next != left) {
         let sum = left.data + right.data
         if (sum == k) {
             if (!ans.includes([right.data, left.data])) {
@@ -105,6 +105,28 @@ function findPairWithGivenSum(head, k) {
     return ans
 }
 
+function removeDuplicateWithSortedLinkedList(head, k) {
+    let mp=new Map()
+    if(head.next==null)return head
+    let temp = head;
+    let t=head;
+    while(temp)
+    {
+        if(mp.has(temp.data))
+        {
+            let nextNode=temp.next
+            let prevNode=temp.prev
+            if(prevNode)prevNode.next=nextNode
+            if(nextNode)nextNode.prev=prevNode
+        }
+        else{
+            mp.set(temp.data,1)
+        }
+        temp=temp.next
+    }
+    return t
+}
+
 function printList(h) {
     let temp = h;
     while (temp) {
@@ -113,7 +135,6 @@ function printList(h) {
     }
 }
 
-let h = convertArray2DoblyList([1, 2, 3, 4])
-let result = findPairWithGivenSum(h, 5)
-console.log("result", result)
+let h = convertArray2DoblyList([1, 1, 3, 3, 4, 5])
+h=removeDuplicateWithSortedLinkedList(h)
 printList(h)
