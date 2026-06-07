@@ -1,40 +1,32 @@
-// function pow(x,n)
-// {
-//     if(n==0){
-//         return 1;
-//     }
-//     return x*pow(x,n-1)
-// }
-
-// function pow(x, n) {
-//     if ( n == 0) return 1
-//     let ans = 1;
-//     let temp=n
-//     if(n<0)
-//     {
-//         x=1/x
-//         temp=-n
-//     }
-//     console.log(x)
-//     for(let i=0;i<temp;i++)
-//     {
-//         ans=ans*x
-//     }
-//     return ans
-// }
-function powX(x,n,res)
+function pow(x,n)
 {
     if(n==0)return 1
-    if(n<0){
+    if(n==1)return x
+    if(n<0)
+    {
         x=1/x
+        n=-n
+    }
+    let m=pow(x,Math.floor(n/2))
+    if(n%2==0)
+    {
+        return m*m
+    }
+    else{
+        return x*m*m
     }
 }
+console.log(pow(2,-2))
 
-function pow(x, n) {
-   if(n==0)return 1
-   let xxm=pow(x,n-1)
-   let ans=x*xxm
-   return ans
-    
-}
-console.log(pow(2.00000, -2))
+
+
+// fun(2,10)
+// fun(2,5)=32*32
+// 2*fun(2,2)=2*4*4=32
+// fun(2,1)=2*2=4
+// fun(2,0)=2
+
+
+
+
+
