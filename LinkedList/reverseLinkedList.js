@@ -87,6 +87,11 @@ function reverseLinkedLists(head, left, right) {
         return dummy.next
 }
 
+function helpher(head)
+{
+
+}
+
 function printList(head) {
     let temp = head;
     while (temp) {
@@ -95,5 +100,10 @@ function printList(head) {
     }
 }
 let h = convertArray2List([1, 2, 3, 4, 5])
-h = reverseLinkedLists(h, 2, 4)
+// h = reverseLinkedLists(h, 2, 4)
+
+let middle=middleofLinkedList(h)
+h=reverseLinkedLists(middle, 2, 4)
+
+
 printList(h)
